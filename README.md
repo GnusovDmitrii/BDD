@@ -1,3 +1,7 @@
+[![Java CI with Gradle](https://github.com/GnusovDmitrii/BDD/actions/workflows/gradle-publish.yml/badge.svg)](https://github.com/GnusovDmitrii/BDD/actions/workflows/gradle-publish.yml)
+
+
+
 # Домашнее задание к занятию «2.4. BDD»
 
 В качестве результата пришлите ссылки на ваши GitHub-проекты в личном кабинете студента на
