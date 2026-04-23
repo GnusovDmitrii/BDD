@@ -19,7 +19,7 @@ jobs:
       
       - name: Start SUT
         run: |
-          java -jar artifacts/app-ibank.jar -P:profile=test &
+          java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test &
 
       - name: Run API tests
         run: gradle test -Dselenide.headless=true --info
