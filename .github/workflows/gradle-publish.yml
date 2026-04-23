@@ -17,6 +17,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+      
       - name: Start app
         run: |
           java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test &
