@@ -17,9 +17,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
-      - name: Start SUT
+      - name: Start app
         run: |
           java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test &
-
-      - name: Run API tests
-        run: gradle test -Dselenide.headless=true --info
+      
+      - name: Run tests
+        run: ./gradlew test -Dselenide.headless=true
+      
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: build/reports/tests/
