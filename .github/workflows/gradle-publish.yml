@@ -17,12 +17,15 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+      
       - name: Start application
         run: |
-          java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test 
-        
+          java -jar artifacts/app-ibank-build-for-testers.jar -P:profile=test &
+          
       
       - name: Run tests
-        run: gradle test -Dselenide.headless=true --info
+        run: ./gradlew test -Dselenide.headless=true --info
       
       
